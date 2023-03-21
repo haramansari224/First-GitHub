@@ -102,9 +102,9 @@ function login() {
 }
 document.getElementById("newName").innerHTML = "Welcome " + name1;
 function add(){
-  // let city1 = input();
+  let city1 = input();
   let city ='<span style="text-transform:capitalize;" >' + input() + "</span>" 
-  if(!city){
+  if(!city1){
     Toastify({
       text: "Please Enter Your City Name ",
       duration: 3000,
@@ -124,7 +124,7 @@ return
   for(let i = 0 ; i < Cities.length; i++){
     if(Cities[i] === city){
       // cityFound = true;
-      output(cityhtml)
+      output(cityhtml);
       Toastify({
         text: "Your City Already in list",
         duration: 3000,
@@ -138,7 +138,8 @@ return
         },
         onClick: function(){} // Callback after click
       }).showToast();return;
-    } else if (Cities[i] !== city) {
+    } 
+    if (Cities[i] !== city) {
       Cities.push(city);
       output("")
       for (let i = 0; i < Cities.length; i++) {
